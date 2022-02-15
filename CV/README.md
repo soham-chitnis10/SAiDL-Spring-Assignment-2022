@@ -24,9 +24,9 @@ To create High Resolution Images the original images were cropped to size of 96x
 
 ### Evaluation Metric
 * Peak Signal to Noise Ratio (PSNR)
-![alt_text](./results/PSNR vs Epoch_SRCNN.svg)
+<img src="./results/PSNR vs Epoch_SRCNN.svg">
 * Loss function : Mean Squared Error
-![alt_text](./results/Loss vs Epoch_SRCNN.svg)
+<img src="./results/Loss vs Epoch_SRCNN.svg">
 
 Both the evaluation metrics were logged using tensorboard can be found in the notebook.
 
@@ -50,9 +50,9 @@ Maximum PSNR value was 33.69 dB in 100 Epochs of training.
 
 ### Evaluation Metric
 * Peak Signal to Noise Ratio (PSNR)
-![alt_text](./results/PSNR vs Epoch_SRResNet.svg)
+<img src="./results/PSNR vs Epoch_SRResNet.svg">
 * Loss function : Mean Squared Error
-![alt_text](./results/Loss vs Epoch_SRResNet.svg)
+<img src="./results/Loss vs Epoch_SRResNet.svg">
 
 Both the evaluation metrics were logged using tensorboard can be found in the notebook.
 
