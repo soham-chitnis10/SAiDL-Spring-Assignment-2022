@@ -30,7 +30,7 @@ To create High Resolution Images the original images were cropped to size of 96x
 
 Both the evaluation metrics were logged using tensorboard can be found in the notebook.
 
-Maximum PSNR value was 33.69 dB in 100 Epochs of training.
+Maximum PSNR value was **33.69 dB** in 100 Epochs of training.
 
 ## Super-Resolution ResNet
 
@@ -56,6 +56,6 @@ Maximum PSNR value was 33.69 dB in 100 Epochs of training.
 
 Both the evaluation metrics were logged using tensorboard can be found in the notebook.
 
-Maximum PSNR value was 34.62 dB in 100 Epochs of training.
+Maximum PSNR value was **34.62 dB** in 100 Epochs of training.
 
 
