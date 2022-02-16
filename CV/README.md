@@ -49,7 +49,7 @@ Maximum PSNR value was **33.69 dB** in 100 Epochs of training.
 * Training Batch size: 16 
 * Test Batch size: 8
 * Scale = 2
-
+    
 ### Evaluation Metric
 
 * Peak Signal to Noise Ratio (PSNR)
@@ -88,4 +88,12 @@ It is clearly visible that Bicubic Interpolation mode gives better quality of im
 * Max Unpooling : In this method we store the index of maximum value while pooling then use that index for max-unpooling where that indes has the pixel value and rest being zero. This is not learnable sampling method.
 <img src="https://miro.medium.com/max/875/1*Mog6cmBG4XzLa0IFbjZIaA.png">
 
+## Recent Evaluation Metrics
 
+* SSIM (Structural Similarity Index) : This is a perceptual metric that quantifies image quality. 
+
+* Feature Loss or Perceptual Loss : This is computed by comparing two images based on high level representation using a pre-trained model. A recent example of this can be DISQ [ (Deep Image Super-resolution Quality) ](https://arxiv.org/pdf/2012.08732.pdf) which is trained on database SISAR.
+
+* Super-resolution Quality Criterion (SRQC) : A recently proposed evaluation metric in 2020. SRQC benchmark evaluates the quality score of a super resolved image according to the perceptual concepts of low-level spatial features in high sharpness space and curvelet based quality-aware features from focal energy bands, which can be used to capture the quality preservation of an SR image. [Article](https://link.springer.com/article/10.1007/s11042-020-09352)
+
+Recently a lot of novel performance evaluation metrics are being proposed.
