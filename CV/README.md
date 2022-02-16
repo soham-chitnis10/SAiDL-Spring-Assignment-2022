@@ -5,7 +5,7 @@ After the cleaning the dataset these were distribution of training vs testing
 * Training Dataset size = 5901 (80% )
 * Test Dataset size = 1477 (20%)
 
-To create High Resolution Images the original images were cropped to size of 96x96 and to for the lower resolution images they were resized to 48x48 and then resized using upscaling factor of 2 to 96x96 using BICUBIC interpolation method. The RGB image was converted into YCbCr which has shown better results than direct training on RGB data. For training purposes high resolution images were randomly cropped and for testing centre crop was evaluated.
+To create High Resolution Images the original images were cropped to size of 96x96 and to for the lower resolution images they were resized to 48x48 and then resized using upscaling factor of 2 to 96x96 using Bicubic or Bilinear or Nearest Neighbours interpolation method. The RGB image was converted into YCbCr which has shown better results than direct training on RGB data. For training purposes high resolution images were randomly cropped and for testing centre crop was evaluated.
 
 ## Super-Resoulution CNNs
 
@@ -23,8 +23,10 @@ To create High Resolution Images the original images were cropped to size of 96x
 * Scale = 2
 
 ### Evaluation Metric
+Bicubic Interpolation
 * Peak Signal to Noise Ratio (PSNR)
 <img src="./results/PSNR vs Epoch_SRCNN.svg">
+
 * Loss function : Mean Squared Error
 <img src="./results/Loss vs Epoch_SRCNN.svg">
 
@@ -49,13 +51,41 @@ Maximum PSNR value was **33.69 dB** in 100 Epochs of training.
 * Scale = 2
 
 ### Evaluation Metric
+
 * Peak Signal to Noise Ratio (PSNR)
 <img src="./results/PSNR vs Epoch_SRResNet.svg">
+
 * Loss function : Mean Squared Error
 <img src="./results/Loss vs Epoch_SRResNet.svg">
 
 Both the evaluation metrics were logged using tensorboard can be found in the notebook.
 
 Maximum PSNR value was **34.62 dB** in 100 Epochs of training.
+
+## Comparison of the performance of different interpolation methods
+
+| Models    | Interpolation Mode | PSNR(dB)  |
+| ----------| :-----------------:| ---------:|
+| SRCNN     | Bicubic            |**33.69**  |
+| SRCNN     | Bilinear           |  33.53    |
+| SRCNN     | Nearest            |  32.67    |
+| SRResNet  | Bicubic            |**34.62**  |
+| SRResNet  | Bilinear           |  34.54    |
+| SRResNet  | Nearest            |  33.31   |
+
+<img src="https://www.researchgate.net/profile/Mohammad-Hasan-17/publication/323064235/figure/fig5/AS:603189497831425@1520822991275/Comparison-between-computationally-cheap-interpolation-algorithms-Among-these-Nearest_W640.jpg">
+
+It is clearly visible that Bicubic Interpolation mode gives better quality of image. Nearest Neighbour PSNR values are also significantly low as comapred the other two and image also shows that it suffers from checkerd phenomenon. Bicubic and Bilinear appear to be similar and so do their PSNR values but Bicubic is slightly better than Bilinear.
+
+## Comparison of Some Other Upsampling methods
+
+* Transpose Convolution : It is reverse of Convolution also referred as deconvolution. It is learnable upsampling method. The steps invovled in transpose convolution is in the image below. 
+<img src="./Transpose_Conv.png">
+
+* Sub-pixel Convolution : Implemented in SRResNet. As we introduced zeros in Transpose Convolution this causes issue in backpropagation as no information can be backpropagated therefore it is attempted to add some values. To overcome this problem sub-pixel convolution is used. In Sub-pixel Convolution there is an regular convolution layer followed by a pixel shuffle in such a way before pixel shuffle the image is HxWx(Cxrxr) changes to (rxH)x(rxW)xC
+<img src="https://miro.medium.com/max/875/0*-82Ps97CPgtUVMua">
+
+* Max Unpooling : In this method we store the index of maximum value while pooling then use that index for max-unpooling where that indes has the pixel value and rest being zero.
+<img src="https://miro.medium.com/max/875/1*Mog6cmBG4XzLa0IFbjZIaA.png">
 
 
