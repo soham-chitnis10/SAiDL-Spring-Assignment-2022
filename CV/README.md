@@ -85,7 +85,7 @@ It is clearly visible that Bicubic Interpolation mode gives better quality of im
 * Sub-pixel Convolution : Implemented in SRResNet. As we introduced zeros in Transpose Convolution this causes issue in backpropagation as no information can be backpropagated therefore it is attempted to add some values. To overcome this problem sub-pixel convolution is used. In Sub-pixel Convolution there is an regular convolution layer followed by a pixel shuffle in such a way before pixel shuffle the image is HxWx(Cxrxr) changes to (rxH)x(rxW)xC
 <img src="https://miro.medium.com/max/875/0*-82Ps97CPgtUVMua">
 
-* Max Unpooling : In this method we store the index of maximum value while pooling then use that index for max-unpooling where that indes has the pixel value and rest being zero.
+* Max Unpooling : In this method we store the index of maximum value while pooling then use that index for max-unpooling where that indes has the pixel value and rest being zero. This is not learnable sampling method.
 <img src="https://miro.medium.com/max/875/1*Mog6cmBG4XzLa0IFbjZIaA.png">
 
 
