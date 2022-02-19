@@ -5,4 +5,5 @@
 * Submission Form: [Link](https://forms.gle/bs6MrbcoLV2egG446)   -->
 Attempted Sections
 1. Section 1 - Literature Review on paper "A ConvNet for 2020s"
-2. Section 3 - Computer Vision
+2. Section 2 - Core ML
+3. Section 3 - Computer Vision
