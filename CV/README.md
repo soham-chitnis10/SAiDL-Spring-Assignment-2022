@@ -73,7 +73,7 @@ Maximum PSNR value was **34.62 dB** in 100 Epochs of training.
 | SRResNet  | Bilinear           |  34.54    |
 | SRResNet  | Nearest            |  33.31   |
 
-<img src="https://www.researchgate.net/profile/Mohammad-Hasan-17/publication/323064235/figure/fig5/AS:603189497831425@1520822991275/Comparison-between-computationally-cheap-interpolation-algorithms-Among-these-Nearest_W640.jpg">
+<img src="https://github.com/soham-chitnis10/SAiDL-Spring-Assignment-2022/blob/main/CV/comparison_interpolation.png">
 
 It is clearly visible that Bicubic Interpolation mode gives better quality of image. Nearest Neighbour PSNR values are also significantly low as comapred the other two and image also shows that it suffers from checkerd phenomenon. Bicubic and Bilinear appear to be similar and so do their PSNR values but Bicubic is slightly better than Bilinear.
 
