@@ -25,10 +25,10 @@ To create High Resolution Images the original images were cropped to size of 96x
 ### Evaluation Metric
 Bicubic Interpolation
 * Peak Signal to Noise Ratio (PSNR)
-<img src="./results/PSNR vs Epoch_SRCNN.svg">
+<img src="https://github.com/soham-chitnis10/SAiDL-Spring-Assignment-2022/blob/main/CV/results/PSNR%20vs%20Epoch_SRCNN.svg">
 
 * Loss function : Mean Squared Error
-<img src="./results/Loss vs Epoch_SRCNN.svg">
+<img src="https://github.com/soham-chitnis10/SAiDL-Spring-Assignment-2022/blob/main/CV/results/Loss%20vs%20Epoch_SRCNN.svg">
 
 Both the evaluation metrics were logged using tensorboard can be found in the notebook.
 
@@ -53,10 +53,10 @@ Maximum PSNR value was **33.69 dB** in 100 Epochs of training.
 ### Evaluation Metric
 
 * Peak Signal to Noise Ratio (PSNR)
-<img src="./results/PSNR vs Epoch_SRResNet.svg">
+<img src="https://github.com/soham-chitnis10/SAiDL-Spring-Assignment-2022/blob/main/CV/results/PSNR%20vs%20Epoch_SRResNet.svg">
 
 * Loss function : Mean Squared Error
-<img src="./results/Loss vs Epoch_SRResNet.svg">
+<img src="https://github.com/soham-chitnis10/SAiDL-Spring-Assignment-2022/blob/main/CV/results/Loss%20vs%20Epoch_SRResNet.svg">
 
 Both the evaluation metrics were logged using tensorboard can be found in the notebook.
 
@@ -80,7 +80,7 @@ It is clearly visible that Bicubic Interpolation mode gives better quality of im
 ## Comparison of Some Other Upsampling methods
 
 * Transpose Convolution : It is reverse of Convolution also referred as deconvolution. It is learnable upsampling method. The steps invovled in transpose convolution is in the image below. 
-<img src="./Transpose_Conv.png">
+<img src="https://github.com/soham-chitnis10/SAiDL-Spring-Assignment-2022/blob/main/CV/Transpose_Conv.png">
 
 * Sub-pixel Convolution : Implemented in SRResNet. As we introduced zeros in Transpose Convolution this causes issue in backpropagation as no information can be backpropagated therefore it is attempted to add some values. To overcome this problem sub-pixel convolution is used. In Sub-pixel Convolution there is an regular convolution layer followed by a pixel shuffle in such a way before pixel shuffle the image is HxWx(Cxrxr) changes to (rxH)x(rxW)xC
 <img src="https://miro.medium.com/max/875/0*-82Ps97CPgtUVMua">
